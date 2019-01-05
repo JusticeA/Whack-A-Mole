@@ -15,6 +15,43 @@ html {
   color: white;
 }
 
+.over {
+  position: fixed;
+  right: 0;
+  top: 0;
+  height: 100%;
+  width: 0;
+  background-color: rgba(128, 128, 128, 0.747);
+  z-index: 2;
+  text-align: center;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  transition: all 4s;
+}
+
+.over-active{
+  width: 100%;
+}
+
+.begin{
+  background-color: rgba(128, 128, 128, 0.644);
+  height: 100%;
+  width: 0;
+  position: fixed;
+  top: 0;
+  left: -100px;
+  text-align: center;
+  display: flex;
+  flex-flow: column;
+  z-index: 1;
+  justify-content: center;
+  transition: all 0.2s; 
+}
+
+.begin-active{
+  width: 125%
+}
 
 .container {
   display: flex;

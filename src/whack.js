@@ -7,7 +7,8 @@ const missed = document.querySelector(".missed");
 const displayMiss = document.querySelector(".miss");
 const speed = document.querySelector(".speed");
 const start = document.querySelector(".start");
-
+const over = document.querySelector(".over");
+const begins = document.querySelector(".begin");
 // Functions
 
 function show() {
@@ -52,10 +53,14 @@ function miss() {
   +missed.textContent++;
   displayMiss.classList.add("active-miss");
   if (missed.childNodes[0].nodeValue == 5) {
-    alert("Game Over");
+    over.classList.add("over-active");
     score.textContent = 0;
     missed.textContent = 0;
   }
+}
+
+const begin = () => {
+  begins.classList.add("begin-active");
 }
 
 // Add listeners
@@ -71,3 +76,10 @@ speed.addEventListener("change", () => {
   clearInterval(pump2);
   pump2 = setInterval(show, speed.value);
 });
+
+window.addEventListener("load", begin);
+
+document.body.addEventListener("click", () => {
+  over.classList.remove("over-active");
+  begins.classList.remove("begin-active");
+})
