@@ -46,7 +46,7 @@ html {
   flex-flow: column;
   z-index: 1;
   justify-content: center;
-  transition: all 0.2s; 
+  transition: all 4s; 
 }
 
 .begin-active{
