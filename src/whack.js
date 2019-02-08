@@ -9,12 +9,12 @@ const speed = document.querySelector(".speed");
 const start = document.querySelector(".start");
 const over = document.querySelector(".over");
 const begins = document.querySelector(".begin");
+const audio = document.querySelectorAll("audio");
 // Functions
 
 function show() {
   // Randomly displays a mole.
   let x = Math.floor(Math.random() * 5);
-  //console.log(x);
   arr.push(x);
 
   // Removes the "active" class from the previous display
@@ -25,18 +25,17 @@ function show() {
   //Prevents the math.random from making the mole appear in the same hole twice, incase the previous and random number now are the same.
   if (arr[arr.length - 2] === x) {
     moles[x].classList.remove("active");
-    //console.log(x);
   } else {
     moles[x].classList.add("active");
     window.addEventListener("click", hit);
   }
 }
-
+// Handles a hit.
 function hit(e) {
-  //console.log(e.target.classList.contains("active"));
   let contain = e.target.classList;
   if (contain.contains("active")) {
     +score.textContent++;
+    audio[2].play();
   } else if (
     contain.contains("first") ||
     contain.contains("second") ||
@@ -48,9 +47,11 @@ function hit(e) {
     miss();
   }
 }
-
+// Handles a miss
 function miss() {
   +missed.textContent++;
+  audio[3].currentTime = 0;
+  audio[3].play();
   displayMiss.classList.add("active-miss");
   if (missed.childNodes[0].nodeValue == 5) {
     over.classList.add("over-active");
@@ -58,19 +59,25 @@ function miss() {
     missed.textContent = 0;
   }
 }
-
+// Renders "begin" lay over.
 const begin = () => {
   begins.classList.add("begin-active");
-}
+};
+// Removes active lay overs.
+const removeActive = () => {
+  over.classList.remove("over-active");
+  begins.classList.remove("begin-active");
+};
 
 // Add listeners
 let pump1;
 start.addEventListener("click", () => {
+  audio[0].play();
   clearInterval(pump1);
   pump1 = setInterval(show, 1200);
 });
 let pump2;
-//window.addEventListener("click", show);
+
 speed.addEventListener("change", () => {
   clearInterval(pump1);
   clearInterval(pump2);
@@ -79,7 +86,6 @@ speed.addEventListener("change", () => {
 
 window.addEventListener("load", begin);
 
-document.body.addEventListener("click", () => {
-  over.classList.remove("over-active");
-  begins.classList.remove("begin-active");
-})
+document.body.addEventListener("click", removeActive);
+
+setTimeout(removeActive, 3000);

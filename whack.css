@@ -27,7 +27,7 @@ html {
   display: flex;
   flex-flow: column;
   justify-content: center;
-  transition: all 4s;
+  transition: all 2s;
 }
 
 .over-active{
@@ -46,7 +46,7 @@ html {
   flex-flow: column;
   z-index: 1;
   justify-content: center;
-  transition: all 4s; 
+  transition: all 1s; 
 }
 
 .begin-active{
