@@ -74,7 +74,7 @@ let pump1;
 start.addEventListener("click", () => {
   audio[0].play();
   clearInterval(pump1);
-  pump1 = setInterval(show, 1200);
+  pump1 = setInterval(show, 900);
 });
 let pump2;
 

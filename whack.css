@@ -58,7 +58,7 @@ html {
   flex-flow: column wrap;
   justify-content: center;
   align-items: center;
-  margin: 20px;
+  margin: 10px;
   text-align: center;
 }
 
@@ -75,7 +75,7 @@ html {
   align-items: end;
   justify-items: center;
   width: 100%;
-  height: 600px;
+  height: 450px;
   margin-bottom: 90px;
 }
 
@@ -139,12 +139,12 @@ img {
 
 
 h1 {
-  margin: 5px;
+  margin: 2px;
   color: rgb(238, 183, 43);
 }
 
 .miss {
-  margin-top: 30px;
+  margin-top: 5px;
   color: rgb(107, 38, 6);
   transition: all 0.2s;
   visibility: hidden;
@@ -152,7 +152,7 @@ h1 {
 }
 
 .active-miss {
-  font-size: 26px;
+  font-size: 18px;
   transform: rotateZ(0deg);
   visibility: visible;
   margin-top: 10px;
