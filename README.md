@@ -1,4 +1,4 @@
-# Testing my skills in vanilla JavaScript, CSS3, and BootStrap HTML5 with a converter 
+# Testing my skills in vanilla JavaScript, CSS3, and HTML5 with this game 
 This is a game (Whack-A-Mole) developed using pure *__HTML, CSS, vanilla JavaScript__* and *Babel* for transpilation.
 
 Thanks to Wes Bos, I was able to obtain an SVG image of a mole.
